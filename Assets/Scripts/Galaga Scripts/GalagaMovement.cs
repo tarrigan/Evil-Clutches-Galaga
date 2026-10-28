@@ -1,9 +1,14 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GalagaMovement : MonoBehaviour
 {
     public float speed = 4;
 
+    public Image[] lives;
+    public int lifeCount = 3;
     public GameObject bullet;
     void Update()
     {
@@ -44,6 +49,26 @@ public class GalagaMovement : MonoBehaviour
         }
 
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -7, 7), Mathf.Clamp(transform.position.y, -4, 4), 0);
+
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision) 
+    {
+        
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+
+            lifeCount -= 1;
+            if (lifeCount <= 0)
+            {
+
+                lifeCount = 0;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+            }
+            lives[lifeCount].enabled = false;
+
+        }
 
     }
 }
