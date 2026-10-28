@@ -248,6 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GalagaMovement
   speed: 4
+  bullet: {fileID: 5658118069713068011, guid: 9d9c96b0bf8da434d959a2455baedfbf, type: 3}
 --- !u!1 &783907205
 GameObject:
   m_ObjectHideFlags: 0

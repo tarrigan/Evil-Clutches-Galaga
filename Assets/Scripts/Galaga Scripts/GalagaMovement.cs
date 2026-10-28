@@ -3,6 +3,8 @@ using UnityEngine;
 public class GalagaMovement : MonoBehaviour
 {
     public float speed = 4;
+
+    public GameObject bullet;
     void Update()
     {
 
@@ -31,6 +33,13 @@ public class GalagaMovement : MonoBehaviour
         {
 
             transform.Translate(-transform.up * speed * Time.deltaTime);
+
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+
+            Instantiate(bullet, transform.position, Quaternion.identity);
 
         }
 
