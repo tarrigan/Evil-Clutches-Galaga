@@ -8,6 +8,13 @@ public class EnemyBullet : MonoBehaviour
 
         transform.Translate(-transform.up * speed * Time.deltaTime);
 
+        if (transform.position.y < -6)
+        {
+
+            Destroy(gameObject);
+
+        }
+
     }
 
 }

@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.Threading;
 using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
@@ -9,6 +10,8 @@ public class WaveSpawner : MonoBehaviour
     public float waveTimer = 0, waveWait = 3;
     void Update()
     {
+
+        waveTimer += Time.deltaTime;
 
         if (waveTimer > waveWait)
         {
