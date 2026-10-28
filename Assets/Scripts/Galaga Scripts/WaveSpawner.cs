@@ -1,0 +1,22 @@
+using NUnit.Framework;
+using UnityEngine;
+
+public class WaveSpawner : MonoBehaviour
+{
+
+    public GameObject[] enemyWaves;
+
+    public float waveTimer = 0, waveWait = 3;
+    void Update()
+    {
+
+        if (waveTimer > waveWait)
+        {
+
+            waveTimer = 0;
+            Instantiate(enemyWaves[Random.Range(0, enemyWaves.Length - 1)], transform.position, Quaternion.identity);
+
+        }
+        
+    }
+}

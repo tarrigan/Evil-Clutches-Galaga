@@ -36,10 +36,10 @@ public class GalagaMovement : MonoBehaviour
 
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
 
-            Instantiate(bullet, transform.position, Quaternion.identity);
+            Instantiate(bullet, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
 
         }
 
